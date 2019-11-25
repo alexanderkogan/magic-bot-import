@@ -1,0 +1,13 @@
+#src
+src
+
+#tests
+test
+coverage
+jest.config.js
+
+#build tools
+
+
+#linters
+.prettierrc.yaml
