@@ -1,7 +1,4 @@
 import * as React from 'react'
+import { Props } from '../react-typings'
 
-export default class Content extends React.Component<{}, {}> {
-    public render(): JSX.Element {
-        return <div className="obc_content-container">{this.props.children}</div>
-    }
-}
+export default (props: Props) => <div className="obc_content-container">{props.children}</div>

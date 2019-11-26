@@ -1,26 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders shallow 1`] = `
-<div>
-  <Title>
-    <Heading>
-      Otto Flow Test Page
-    </Heading>
-  </Title>
-  <Content>
-    <Button
-      type="primary"
-    >
-      Some trashy Button 
-      <Component
-        type="trash"
-      />
-    </Button>
-    <Component />
-    Some text
-  </Content>
-  <Content>
-    More Content
-  </Content>
-</div>
+<BrowserRouter>
+  <div>
+    <nav>
+      <Component>
+        <Component
+          to="/"
+        >
+          Home
+        </Component>
+        <Component
+          to="/test"
+        >
+          Pattern Library Test
+        </Component>
+      </Component>
+    </nav>
+    <Switch>
+      <Route
+        path="/test"
+      >
+        <TestPage />
+      </Route>
+      <Route
+        path="/"
+      >
+        lorem ipsum
+      </Route>
+    </Switch>
+  </div>
+</BrowserRouter>
 `;

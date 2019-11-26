@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Props } from '../react-typings'
 
 // see: https://pattern-library.portal.otto.market/fragments#icons
 export type IconType =
@@ -39,4 +40,4 @@ export interface IconProps {
     type: IconType
 }
 
-export default (props: IconProps) => <i className={`obc_icon-${props.type}`}></i>
+export default (props: Props<IconProps>) => <i className={`obc_icon-${props.type}`}></i>
