@@ -1,5 +1,7 @@
 import { Action } from '../../composition/model/action'
-import { SelectableValue } from '.'
+import { SelectableValue } from '../state'
+
+export type TestPageAction = TestItemAction | BookInfoAction
 
 export type TestItemAction = PopTestItemAction | PushTestItemAction
 
@@ -12,4 +14,12 @@ export function pushItem(value: SelectableValue): PushTestItemAction {
 
 export function popItem(): PopTestItemAction {
     return { type: 'TEST_ITEM_POP' }
+}
+
+export type BookInfoAction = FetchedBookInfoAction
+
+export type FetchedBookInfoAction = Action<'BOOK_INFO_FETCHED'> & { value: string | undefined }
+
+export function fetchedBookInfo(value: string | undefined): FetchedBookInfoAction {
+    return { type: 'BOOK_INFO_FETCHED', value }
 }

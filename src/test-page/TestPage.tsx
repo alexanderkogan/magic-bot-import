@@ -2,8 +2,8 @@ import * as React from 'react'
 
 import Title from '../pattern-library/Title'
 import Heading from '../pattern-library/Heading'
-import Content from '../pattern-library/Content'
 import FirstTestContent from './FirstTestContent'
+import SecondTestContent from './SecondTestContent'
 
 export default class TestPage extends React.Component {
     public render(): JSX.Element {
@@ -12,8 +12,8 @@ export default class TestPage extends React.Component {
                 <Title>
                     <Heading>Otto Flow Test Page</Heading>
                 </Title>
-                <FirstTestContent></FirstTestContent>
-                <Content>More Content</Content>
+                <FirstTestContent />
+                <SecondTestContent />
             </div>
         )
     }

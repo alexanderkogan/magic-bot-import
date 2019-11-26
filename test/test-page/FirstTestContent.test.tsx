@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { component as FirstTestContent, mapStateToProps, dispatchToProps } from '../../src/test-page/FirstTestContent'
-import { shallow, dispatchedAction } from '../test-utils'
+import { shallow } from '../test-utils'
 import { popItem, pushItem } from '../../src/test-page/state/actions'
 
 describe('FirstTestContent', () => {
@@ -17,14 +17,16 @@ describe('FirstTestContent', () => {
     })
 
     describe('dispatch mapping', () => {
-        it('dispatches pop action', () => {
-            const action = dispatchedAction(d => dispatchToProps(d).pop())
-            expect(action).toEqual(popItem())
+        it('dispatches pop action', async () => {
+            const dispatcher = jest.fn()
+            dispatchToProps(dispatcher).pop()
+            expect(dispatcher).toHaveBeenCalledWith(popItem())
         })
 
-        it('dispatches push action', () => {
-            const action = dispatchedAction(d => dispatchToProps(d).push('first value'))
-            expect(action).toEqual(pushItem('first value'))
+        it('dispatches push action', async () => {
+            const dispatcher = jest.fn()
+            dispatchToProps(dispatcher).push('first value')
+            expect(dispatcher).toHaveBeenCalledWith(pushItem('first value'))
         })
     })
 

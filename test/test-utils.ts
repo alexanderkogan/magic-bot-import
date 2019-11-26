@@ -10,8 +10,13 @@ export function mount(element: JSX.Element): ReactWrapper {
     return render(element)
 }
 
-export function dispatchedAction(f: (dispatcher: Dispatch) => void): Action {
-    const dispatcher = jest.fn()
-    f(dispatcher)
-    return dispatcher.mock.calls[0][0]
+export function mockReturnValue<T>(o: object, value: T): void {
+    ;(o as jest.Mock).mockReturnValue(value)
+}
+
+export function mockReturnValues<T>(o: object, ...values: T[]): void {
+    const mock = o as jest.Mock
+    for (const value of values) {
+        mock.mockReturnValueOnce(value)
+    }
 }

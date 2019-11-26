@@ -1,7 +1,7 @@
-import { initialState, TestPageState, SelectableValue } from './'
-import { TestItemAction } from './actions'
+import { initialState, TestPageState, SelectableValue } from '../state'
+import { TestPageAction } from './actions'
 
-function createValues(values: SelectableValue[], action: TestItemAction): SelectableValue[] {
+function createValues(values: SelectableValue[], action: TestPageAction): SelectableValue[] {
     const newValues = [...values]
     switch (action.type) {
         case 'TEST_ITEM_POP':
@@ -14,8 +14,16 @@ function createValues(values: SelectableValue[], action: TestItemAction): Select
     return newValues
 }
 
-export const testPageReducer = (current = initialState, action: TestItemAction): TestPageState => {
+function createBookInfo(bookInfo: string | undefined, action: TestPageAction): string | undefined {
+    if (action.type === 'BOOK_INFO_FETCHED') {
+        return action.value
+    }
+    return bookInfo
+}
+
+export const testPageReducer = (current = initialState, action: TestPageAction): TestPageState => {
     return {
         valuesSelected: createValues(current.valuesSelected, action),
+        bookInfo: createBookInfo(current.bookInfo, action),
     }
 }
