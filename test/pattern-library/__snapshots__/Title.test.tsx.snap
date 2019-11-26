@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title renders 1`] = `
+<Component>
+  <div
+    className="obc_title-container"
+  >
+    children
+  </div>
+</Component>
+`;

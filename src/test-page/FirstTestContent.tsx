@@ -37,13 +37,14 @@ export const component = (props: Props<FirstTestContentProps>) => {
                 delete last item <Icon type="trash" />
             </Button>
             <Divider />
+            items selected: {props.selections}
             last selection: {props.lastSelection || 'nothing selected yet'}
             <ToggleButton
                 id="valueToggle"
                 values={['first value', 'second value', 'another value']}
                 changed={props.push}
                 currentValue={props.lastSelection}
-            ></ToggleButton>
+            />
         </Content>
     )
 }

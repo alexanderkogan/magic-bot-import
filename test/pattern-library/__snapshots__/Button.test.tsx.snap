@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders 1`] = `
+<Component
+  clicked={[MockFunction]}
+  type="default"
+>
+  <button
+    className="obc_btn"
+    onClick={[MockFunction]}
+    type="button"
+  />
+</Component>
+`;
+
+exports[`Button renders small buttons correctly 1`] = `
+<Component
+  clicked={[MockFunction]}
+  small={true}
+  type="primary"
+>
+  <button
+    className="obc_btn-primary obc_btn--small"
+    onClick={[MockFunction]}
+    type="button"
+  />
+</Component>
+`;

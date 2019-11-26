@@ -3,20 +3,18 @@
 exports[`App renders shallow 1`] = `
 <BrowserRouter>
   <div>
-    <nav>
-      <Component>
-        <Component
-          to="/"
-        >
-          Home
-        </Component>
-        <Component
-          to="/test"
-        >
-          Pattern Library Test
-        </Component>
+    <Component>
+      <Component
+        to="/"
+      >
+        Home
       </Component>
-    </nav>
+      <Component
+        to="/test"
+      >
+        Pattern Library Test
+      </Component>
+    </Component>
     <Switch>
       <Route
         path="/test"

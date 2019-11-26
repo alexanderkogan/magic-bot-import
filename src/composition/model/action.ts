@@ -1,3 +1,3 @@
-export interface Action<Name> {
+export interface Action<Name = string> {
     type: Name
 }

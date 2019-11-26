@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TestPage renders shallow 1`] = `
+<div>
+  <Component>
+    <Component>
+      Otto Flow Test Page
+    </Component>
+  </Component>
+  <Connect(Component) />
+  <Component>
+    More Content
+  </Component>
+</div>
+`;
