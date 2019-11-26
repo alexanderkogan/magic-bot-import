@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavItem renders shallow 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Component>
+      <nav>
+        <ul
+          className="obc_tabs"
+        >
+          <Component
+            to="some/location"
+          >
+            <li
+              className="obc_tabs__item"
+            >
+              <Link
+                className="obc_tabs__link"
+                to="some/location"
+              >
+                <LinkAnchor
+                  className="obc_tabs__link"
+                  href="/some/location"
+                  navigate={[Function]}
+                >
+                  <a
+                    className="obc_tabs__link"
+                    href="/some/location"
+                    onClick={[Function]}
+                  >
+                    children
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </li>
+          </Component>
+        </ul>
+      </nav>
+    </Component>
+  </Router>
+</BrowserRouter>
+`;

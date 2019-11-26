@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleButton renders 1`] = `
+<Component
+  changed={[Function]}
+  currentValue="yes"
+  id="toggle1"
+  values={
+    Array [
+      "yes",
+      "maybe",
+      "no",
+    ]
+  }
+>
+  <div>
+    <input
+      checked={true}
+      className="obc_btn-toggle"
+      id="toggle10"
+      key="input_toggle10"
+      name="radio-group"
+      onChange={[Function]}
+      type="radio"
+    />
+    <label
+      htmlFor="toggle10"
+      key="label_toggle10"
+    >
+      yes
+    </label>
+    <input
+      checked={false}
+      className="obc_btn-toggle"
+      id="toggle11"
+      key="input_toggle11"
+      name="radio-group"
+      onChange={[Function]}
+      type="radio"
+    />
+    <label
+      htmlFor="toggle11"
+      key="label_toggle11"
+    >
+      maybe
+    </label>
+    <input
+      checked={false}
+      className="obc_btn-toggle"
+      id="toggle12"
+      key="input_toggle12"
+      name="radio-group"
+      onChange={[Function]}
+      type="radio"
+    />
+    <label
+      htmlFor="toggle12"
+      key="label_toggle12"
+    >
+      no
+    </label>
+  </div>
+</Component>
+`;

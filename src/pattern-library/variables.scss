@@ -1,0 +1,40 @@
+// Colors
+$obc_red100: #d4021d;
+$obc_yellow100: #ffb432;
+$obc_green100: #326400;
+$obc_blue100: #003264;
+
+$obc_black100: #222;
+$obc_black50: #333;
+
+$obc_grey400: #777;
+$obc_grey300: #9e9e9e;
+$obc_grey200: #c4c4c4;
+$obc_grey100: #e6e6e6;
+$obc_grey50: #eee;
+$obc_grey25: #f6f6f6;
+
+$obc_white100: #fff;
+
+//Semantic colors
+$obc_error-color: #e6344b;
+$obc_warning-color: #ffb432;
+$obc_info-color: #003264;
+$obc_success-color: #326400;
+
+// Font-sizes
+$obc_font50: 0.75; // 12px
+$obc_font100: 0.875; // 14px
+$obc_font150: 1; // 16px
+$obc_font200: 1.125; // 18px
+$obc_font300: 1.5; // 24px
+$obc_font400: 2.25; // 36px
+
+@mixin font-size($font-size) {
+    $line-height: $font-size * 1.5;
+
+    font-size: ($font-size * 16) + px;
+    line-height: ($line-height * 16) + px;
+    font-size: $font-size + rem;
+    line-height: $line-height + rem;
+}

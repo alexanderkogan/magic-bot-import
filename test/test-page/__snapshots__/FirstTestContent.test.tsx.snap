@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FirstTestContent component renders shallow 1`] = `
+<Component>
+  <Component
+    clicked={[MockFunction]}
+    type="primary"
+  >
+    delete last item 
+    <Component
+      type="trash"
+    />
+  </Component>
+  <Component />
+  items selected: 
+  42
+  last selection: 
+  another value
+  <Component
+    changed={[MockFunction]}
+    currentValue="another value"
+    id="valueToggle"
+    values={
+      Array [
+        "first value",
+        "second value",
+        "another value",
+      ]
+    }
+  />
+</Component>
+`;
