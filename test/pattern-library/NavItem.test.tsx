@@ -10,7 +10,8 @@ describe('NavItem', () => {
         const element = mount(
             <Router>
                 <Nav>
-                    <NavItem to="some/location">children</NavItem>
+                    <NavItem to="some/location">some location</NavItem>
+                    <NavItem to="">currentPage</NavItem>
                 </Nav>
             </Router>
         )

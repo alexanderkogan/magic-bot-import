@@ -1,32 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders shallow 1`] = `
-<BrowserRouter>
-  <div>
-    <Component>
-      <Component
-        to="/"
-      >
-        Home
+<ContextProvider
+  value={
+    Object {
+      "books": Object {
+        "fetchBookInfo": [MockFunction],
+      },
+    }
+  }
+>
+  <BrowserRouter>
+    <div>
+      <Component>
+        <Component
+          to="/"
+        >
+          Home
+        </Component>
+        <Component
+          to="/test"
+        >
+          Pattern Library Test
+        </Component>
       </Component>
-      <Component
-        to="/test"
-      >
-        Pattern Library Test
-      </Component>
-    </Component>
-    <Switch>
-      <Route
-        path="/test"
-      >
-        <TestPage />
-      </Route>
-      <Route
-        path="/"
-      >
-        lorem ipsum
-      </Route>
-    </Switch>
-  </div>
-</BrowserRouter>
+      <Switch>
+        <Route
+          path="/test"
+        >
+          <TestPage />
+        </Route>
+        <Route
+          path="/"
+        >
+          lorem ipsum
+        </Route>
+      </Switch>
+    </div>
+  </BrowserRouter>
+</ContextProvider>
 `;

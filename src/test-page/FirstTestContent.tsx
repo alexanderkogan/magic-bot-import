@@ -38,6 +38,7 @@ export const component = (props: Props<FirstTestContentProps>) => {
             </Button>
             <Divider />
             items selected: {props.selections}
+            <br />
             last selection: {props.lastSelection || 'nothing selected yet'}
             <ToggleButton
                 id="valueToggle"
