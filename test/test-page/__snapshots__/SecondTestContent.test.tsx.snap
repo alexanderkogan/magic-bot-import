@@ -2,7 +2,12 @@
 
 exports[`SecondTestContent component renders 1`] = `
 <Component
-  bookInfo="some book info"
+  bookInfo={
+    Object {
+      "type": "loaded",
+      "value": "some book info",
+    }
+  }
   context={
     Object {
       "books": Object {
@@ -16,7 +21,7 @@ exports[`SecondTestContent component renders 1`] = `
     <div
       className="obc_content-container"
     >
-      some book info
+      {"type":"loaded","value":"some book info"}
     </div>
   </Component>
 </Component>

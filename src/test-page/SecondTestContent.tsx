@@ -2,44 +2,50 @@ import * as React from 'react'
 import { Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
-import { fetchedBookInfo } from './state/actions'
+import * as BookInfoActions from './actions/book-info-actions'
 
 import Content from '../pattern-library/Content'
 import { RootState, extractTestPage } from '../composition/store'
 import { TestPageState } from './state'
 import { AsyncReader } from '../async-reader'
 import { AppContext, AppContextProps } from '../composition/context'
+import { Fetchable } from '../composition/model/fetchable'
 
-export interface FirstTestContentProps {
+export interface SecondTestContentProps {
     load: (isb: string) => AsyncReader<AppContext, void>
-    bookInfo: string | undefined
+    bookInfo: Fetchable<string>
 }
 
-export const mapStateToProps = (state: TestPageState) => ({
-    bookInfo: state.bookInfo,
-})
+export const mapStateToProps = (state: TestPageState) => {
+    return { bookInfo: state.bookInfo }
+}
 
 export const dispatchToProps = (dispatch: Dispatch) => ({
-    load: (isbn: string) => {
-        return async (context: AppContext) => {
+    load: (isbn: string) => async (context: AppContext) => {
+        dispatch(BookInfoActions.fetching())
+        try {
             const info = await context.books.fetchBookInfo(isbn)
-            dispatch(fetchedBookInfo(info))
+            if (info !== undefined) {
+                dispatch(BookInfoActions.fetched(info.description))
+            }
+        } catch (e) {
+            dispatch(BookInfoActions.failed(e))
         }
     },
 })
 
-export class Component extends React.Component<FirstTestContentProps & AppContextProps> {
+export class Component extends React.Component<SecondTestContentProps & AppContextProps> {
     public componentDidMount() {
         const harryPotter = '0747532699'
         this.props.load(harryPotter)(this.props.context)
     }
 
     public render() {
-        return <Content>{this.props.bookInfo}</Content>
+        return <Content>{JSON.stringify(this.props.bookInfo)}</Content>
     }
 }
 
-export const componentWithContext = (props: FirstTestContentProps) => {
+export const componentWithContext = (props: SecondTestContentProps) => {
     return <AppContext.Consumer>{context => <Component context={context} {...props}></Component>}</AppContext.Consumer>
 }
 

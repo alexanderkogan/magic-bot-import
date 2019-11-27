@@ -9,6 +9,7 @@
         "no-empty-interface": false,
         "no-submodule-imports": false,
         "ordered-imports": false,
-        "max-classes-per-file": false
+        "max-classes-per-file": false,
+        "no-implicit-dependencies": false
     }
 }

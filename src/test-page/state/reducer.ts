@@ -1,5 +1,6 @@
 import { initialState, TestPageState, SelectableValue } from '../state'
-import { TestPageAction } from './actions'
+import { TestPageAction } from '../actions/actions'
+import { Fetchable, empty, loading, loaded, failed } from '../../composition/model/fetchable'
 
 function createValues(values: SelectableValue[], action: TestPageAction): SelectableValue[] {
     const newValues = [...values]
@@ -14,9 +15,15 @@ function createValues(values: SelectableValue[], action: TestPageAction): Select
     return newValues
 }
 
-function createBookInfo(bookInfo: string | undefined, action: TestPageAction): string | undefined {
+function createBookInfo(bookInfo: Fetchable<string>, action: TestPageAction): Fetchable<string> {
+    if (action.type === 'BOOK_INFO_FETCH_FAILED') {
+        return failed(action.error)
+    }
     if (action.type === 'BOOK_INFO_FETCHED') {
-        return action.value
+        return loaded(action.value)
+    }
+    if (action.type === 'BOOK_INFO_FETCHING') {
+        return loading()
     }
     return bookInfo
 }

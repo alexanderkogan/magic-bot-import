@@ -3,7 +3,7 @@ import { Dispatch } from 'redux'
 import { connect } from 'react-redux'
 import { Props } from '../react-typings'
 
-import { popItem, pushItem } from './state/actions'
+import * as TestItemActions from './actions/test-item-actions'
 
 import Content from '../pattern-library/Content'
 import Button from '../pattern-library/Button'
@@ -26,8 +26,8 @@ export const mapStateToProps = (state: TestPageState) => ({
 })
 
 export const dispatchToProps = (dispatch: Dispatch) => ({
-    push: (name: SelectableValue) => dispatch(pushItem(name)),
-    pop: () => dispatch(popItem()),
+    push: (name: SelectableValue) => dispatch(TestItemActions.push(name)),
+    pop: () => dispatch(TestItemActions.pop()),
 })
 
 export const component = (props: Props<FirstTestContentProps>) => {

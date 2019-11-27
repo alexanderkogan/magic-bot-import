@@ -6,9 +6,9 @@
     "scripts": {
         "build": "npm run clean-dist && webpack -p",
         "start": "webpack-dev-server --hot",
-        "format": "prettier --config .prettierrc.yaml --write '{src,configs,tests}/**/*.{ts,tsx,js,jsx,html}'",
-        "format:check": "prettier --config .prettierrc.yaml --list-different '{src,configs,tests}/**/*.{ts,tsx,js,jsx,html}'",
-        "lint": "tslint '{src,configs,tests}/**/*.{ts,tsx,js,jsx}'",
+        "format": "prettier --config .prettierrc.yaml --write '{src,configs,test}/**/*.{ts,tsx,js,jsx,html}'",
+        "format:check": "prettier --config .prettierrc.yaml --list-different '{src,configs,test}/**/*.{ts,tsx,js,jsx,html}'",
+        "lint": "tslint '{src,configs,test}/**/*.{ts,tsx,js,jsx}'",
         "test": "jest --coverage",
         "test:watch": "jest --watch",
         "clean-dist": "rm -rfd dist"
