@@ -1,7 +1,7 @@
 {
-    "name": "flow_frontend",
+    "name": "magic-bot-import",
     "version": "1.0.0",
-    "description": "Frontend for otto flow",
+    "description": "Importers for the magic-bot",
     "private": true,
     "scripts": {
         "build": "npm run clean-dist && webpack -p",
