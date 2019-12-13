@@ -2,8 +2,6 @@
 
 exports[`Content renders 1`] = `
 <Component>
-  <hr
-    className="obc_divider"
-  />
+  <hr />
 </Component>
 `;

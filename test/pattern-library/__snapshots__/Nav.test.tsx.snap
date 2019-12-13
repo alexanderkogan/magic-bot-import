@@ -3,9 +3,7 @@
 exports[`Nav renders 1`] = `
 <Component>
   <nav>
-    <ul
-      className="obc_tabs"
-    >
+    <ul>
       children
     </ul>
   </nav>

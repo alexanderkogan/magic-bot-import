@@ -3,6 +3,6 @@ import { Props } from '../react-typings'
 
 export default (props: Props) => (
     <nav>
-        <ul className="obc_tabs">{props.children}</ul>
+        <ul>{props.children}</ul>
     </nav>
 )

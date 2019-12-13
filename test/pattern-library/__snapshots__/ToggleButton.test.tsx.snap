@@ -16,7 +16,6 @@ exports[`ToggleButton renders 1`] = `
   <div>
     <input
       checked={true}
-      className="obc_btn-toggle"
       id="toggle10"
       key="input_toggle10"
       name="radio-group"
@@ -31,7 +30,6 @@ exports[`ToggleButton renders 1`] = `
     </label>
     <input
       checked={false}
-      className="obc_btn-toggle"
       id="toggle11"
       key="input_toggle11"
       name="radio-group"
@@ -46,7 +44,6 @@ exports[`ToggleButton renders 1`] = `
     </label>
     <input
       checked={false}
-      className="obc_btn-toggle"
       id="toggle12"
       key="input_toggle12"
       name="radio-group"

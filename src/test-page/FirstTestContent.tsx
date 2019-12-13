@@ -7,7 +7,6 @@ import * as TestItemActions from './actions/test-item-actions'
 
 import Content from '../pattern-library/Content'
 import Button from '../pattern-library/Button'
-import Icon from '../pattern-library/Icon'
 import Divider from '../pattern-library/Divider'
 import ToggleButton from '../pattern-library/ToggleButton'
 import { RootState, extractTestPage } from '../composition/store'
@@ -33,9 +32,7 @@ export const dispatchToProps = (dispatch: Dispatch) => ({
 export const component = (props: Props<FirstTestContentProps>) => {
     return (
         <Content>
-            <Button type="primary" clicked={props.pop}>
-                delete last item <Icon type="trash" />
-            </Button>
+            <Button clicked={props.pop}>delete last item 🗑️</Button>
             <Divider />
             items selected: {props.selections}
             <br />

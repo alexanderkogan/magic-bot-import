@@ -18,9 +18,7 @@ exports[`SecondTestContent component renders 1`] = `
   load={[Function]}
 >
   <Component>
-    <div
-      className="obc_content-container"
-    >
+    <div>
       {"type":"loaded","value":"some book info"}
     </div>
   </Component>

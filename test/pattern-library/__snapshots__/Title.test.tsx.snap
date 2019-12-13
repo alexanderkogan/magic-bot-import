@@ -2,9 +2,7 @@
 
 exports[`Title renders 1`] = `
 <Component>
-  <div
-    className="obc_title-container"
-  >
+  <div>
     children
   </div>
 </Component>

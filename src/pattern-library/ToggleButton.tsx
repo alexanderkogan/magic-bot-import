@@ -11,7 +11,6 @@ export interface ToggleButtonProps<T extends string = string> {
 function createInput<T extends string = string>(id: string, value: T, props: ToggleButtonProps<T>): JSX.Element {
     return (
         <input
-            className="obc_btn-toggle"
             type="radio"
             name="radio-group"
             id={id}

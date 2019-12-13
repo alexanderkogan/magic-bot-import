@@ -26,24 +26,17 @@ exports[`NavItem renders shallow 1`] = `
   >
     <Component>
       <nav>
-        <ul
-          className="obc_tabs"
-        >
+        <ul>
           <Component
             to="some/location"
           >
-            <li
-              className="obc_tabs__item"
-            >
+            <li>
               <NavLink
-                activeClassName="obc_tabs__link--selected"
-                className="obc_tabs__link"
                 exact={true}
                 to="some/location"
               >
                 <Link
                   aria-current={null}
-                  className="obc_tabs__link"
                   to={
                     Object {
                       "hash": "",
@@ -55,13 +48,11 @@ exports[`NavItem renders shallow 1`] = `
                 >
                   <LinkAnchor
                     aria-current={null}
-                    className="obc_tabs__link"
                     href="/some/location"
                     navigate={[Function]}
                   >
                     <a
                       aria-current={null}
-                      className="obc_tabs__link"
                       href="/some/location"
                       onClick={[Function]}
                     >
@@ -75,18 +66,14 @@ exports[`NavItem renders shallow 1`] = `
           <Component
             to=""
           >
-            <li
-              className="obc_tabs__item"
-            >
+            <li>
               <NavLink
-                activeClassName="obc_tabs__link--selected"
-                className="obc_tabs__link"
                 exact={true}
                 to=""
               >
                 <Link
                   aria-current="page"
-                  className="obc_tabs__link obc_tabs__link--selected"
+                  className="active"
                   style={Object {}}
                   to={
                     Object {
@@ -99,14 +86,14 @@ exports[`NavItem renders shallow 1`] = `
                 >
                   <LinkAnchor
                     aria-current="page"
-                    className="obc_tabs__link obc_tabs__link--selected"
+                    className="active"
                     href="/"
                     navigate={[Function]}
                     style={Object {}}
                   >
                     <a
                       aria-current="page"
-                      className="obc_tabs__link obc_tabs__link--selected"
+                      className="active"
                       href="/"
                       onClick={[Function]}
                       style={Object {}}
