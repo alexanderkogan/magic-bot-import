@@ -4,8 +4,8 @@ exports[`App renders shallow 1`] = `
 <ContextProvider
   value={
     Object {
-      "books": Object {
-        "fetchBookInfo": [MockFunction],
+      "mtgCards": Object {
+        "fetchMtgCards": [MockFunction],
       },
     }
   }

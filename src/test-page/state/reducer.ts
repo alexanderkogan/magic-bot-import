@@ -12,14 +12,14 @@ export const testPageReducer = (state: TestPageState = initialState, action: Tes
             case 'TEST_ITEM_PUSH':
                 draft.valuesSelected.push(action.value)
                 break
-            case 'BOOK_INFO_FETCHING':
-                draft.bookInfo = loading()
+            case 'MTG_CARDS_FETCHING':
+                draft.cardsInfo = loading()
                 break
-            case 'BOOK_INFO_FETCHED':
-                draft.bookInfo = loaded(action.value)
+            case 'MTG_CARDS_FETCHED':
+                draft.cardsInfo = loaded(action.value)
                 break
-            case 'BOOK_INFO_FETCH_FAILED':
-                draft.bookInfo = failed(action.error)
+            case 'MTG_CARDS_FETCH_FAILED':
+                draft.cardsInfo = failed(action.error)
                 break
         }
     })

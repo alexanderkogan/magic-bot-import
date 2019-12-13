@@ -1,4 +1,4 @@
 import { TestItemAction } from './test-item-actions'
-import { BookInfoAction } from './book-info-actions'
+import { MtgCardsAction } from './mtg-cards-actions'
 
-export type TestPageAction = TestItemAction | BookInfoAction
+export type TestPageAction = TestItemAction | MtgCardsAction

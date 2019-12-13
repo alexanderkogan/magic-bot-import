@@ -3,14 +3,15 @@ import { TestPageState } from '../../../src/test-page/state'
 import { empty, loading, loaded, failed } from '../../../src/composition/model/fetchable'
 
 import * as TestItemActions from '../../../src/test-page/actions/test-item-actions'
-import * as BookInfoActions from '../../../src/test-page/actions/book-info-actions'
+import * as MtgCardsActions from '../../../src/test-page/actions/mtg-cards-actions'
+import { mockedCards } from '../../mocks'
 
 describe('testPageReducer', () => {
     describe('TestItemActions', () => {
         describe('push actions', () => {
             it('adds a value at the end of valuesSelected', () => {
                 // given
-                const oldState: TestPageState = { valuesSelected: [], bookInfo: empty() }
+                const oldState: TestPageState = { valuesSelected: [], cardsInfo: empty() }
 
                 // when
                 const newState = testPageReducer(oldState, TestItemActions.push('another value'))
@@ -23,7 +24,7 @@ describe('testPageReducer', () => {
         describe('pop actions', () => {
             it('removes a value from the end of valuesSelected', () => {
                 // given
-                const oldState: TestPageState = { valuesSelected: ['another value'], bookInfo: empty() }
+                const oldState: TestPageState = { valuesSelected: ['another value'], cardsInfo: empty() }
 
                 // when
                 const newState = testPageReducer(oldState, TestItemActions.pop())
@@ -34,7 +35,7 @@ describe('testPageReducer', () => {
 
             it('works with empty valuesSelected', () => {
                 // given
-                const oldState: TestPageState = { valuesSelected: [], bookInfo: empty() }
+                const oldState: TestPageState = { valuesSelected: [], cardsInfo: empty() }
 
                 // when
                 const newState = testPageReducer(oldState, TestItemActions.pop())
@@ -44,43 +45,43 @@ describe('testPageReducer', () => {
             })
         })
     })
-    describe('BookInfoActions', () => {
+    describe('MtgCardsActions', () => {
         describe('fetching', () => {
-            it('sets bookinfo into loading state', () => {
+            it('sets cardsInfo into loading state', () => {
                 // given
-                const oldState: TestPageState = { valuesSelected: [], bookInfo: empty() }
+                const oldState: TestPageState = { valuesSelected: [], cardsInfo: empty() }
 
                 // when
-                const newState = testPageReducer(oldState, BookInfoActions.fetching())
+                const newState = testPageReducer(oldState, MtgCardsActions.fetching())
 
                 // then
-                expect(newState.bookInfo).toEqual(loading())
+                expect(newState.cardsInfo).toEqual(loading())
             })
         })
 
         describe('fetched', () => {
             it('sets bookinfo into loaded state', () => {
                 // given
-                const oldState: TestPageState = { valuesSelected: [], bookInfo: empty() }
+                const oldState: TestPageState = { valuesSelected: [], cardsInfo: empty() }
 
                 // when
-                const newState = testPageReducer(oldState, BookInfoActions.fetched('info'))
+                const newState = testPageReducer(oldState, MtgCardsActions.fetched(mockedCards()))
 
                 // then
-                expect(newState.bookInfo).toEqual(loaded('info'))
+                expect(newState.cardsInfo).toEqual(loaded(mockedCards()))
             })
         })
 
         describe('errored', () => {
             it('sets bookinfo into error state', () => {
                 // given
-                const oldState: TestPageState = { valuesSelected: [], bookInfo: empty() }
+                const oldState: TestPageState = { valuesSelected: [], cardsInfo: empty() }
 
                 // when
-                const newState = testPageReducer(oldState, BookInfoActions.failed(new Error('some error')))
+                const newState = testPageReducer(oldState, MtgCardsActions.failed(new Error('some error')))
 
                 // then
-                expect(newState.bookInfo).toEqual(failed(new Error('some error')))
+                expect(newState.cardsInfo).toEqual(failed(new Error('some error')))
             })
         })
     })

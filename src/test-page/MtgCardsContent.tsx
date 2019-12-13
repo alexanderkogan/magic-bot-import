@@ -2,50 +2,50 @@ import * as React from 'react'
 import { Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
-import * as BookInfoActions from './actions/book-info-actions'
-
 import Content from '../pattern-library/Content'
 import { RootState, extractTestPage } from '../composition/store'
 import { TestPageState } from './state'
 import { AsyncReader } from '../async-reader'
 import { AppContext, AppContextProps } from '../composition/context'
 import { Fetchable } from '../composition/model/fetchable'
+import { Card } from 'scryfall-sdk'
+import * as MtgCardsActions from './actions/mtg-cards-actions'
 
-export interface SecondTestContentProps {
+export interface MtgCardsContentProps {
     load: (isb: string) => AsyncReader<AppContext, void>
-    bookInfo: Fetchable<string>
+    cardsInfo: Fetchable<Card[]>
 }
 
 export const mapStateToProps = (state: TestPageState) => {
-    return { bookInfo: state.bookInfo }
+    return { cardsInfo: state.cardsInfo }
 }
 
 export const dispatchToProps = (dispatch: Dispatch) => ({
-    load: (isbn: string) => async (context: AppContext) => {
-        dispatch(BookInfoActions.fetching())
+    load: (setKeyword: string) => async (context: AppContext) => {
+        dispatch(MtgCardsActions.fetching())
         try {
-            const info = await context.books.fetchBookInfo(isbn)
+            const info = await context.mtgCards.fetchMtgCards(setKeyword)
             if (info !== undefined) {
-                dispatch(BookInfoActions.fetched(info.description))
+                dispatch(MtgCardsActions.fetched(info))
             }
         } catch (e) {
-            dispatch(BookInfoActions.failed(e))
+            dispatch(MtgCardsActions.failed(e))
         }
     },
 })
 
-export class Component extends React.Component<SecondTestContentProps & AppContextProps> {
+export class Component extends React.Component<MtgCardsContentProps & AppContextProps> {
     public componentDidMount() {
-        const harryPotter = '0747532699'
-        this.props.load(harryPotter)(this.props.context)
+        const throneOfEldraineSetKeyword = 'ELD'
+        this.props.load(throneOfEldraineSetKeyword)(this.props.context)
     }
 
     public render() {
-        return <Content>{JSON.stringify(this.props.bookInfo)}</Content>
+        return <Content>{JSON.stringify(this.props.cardsInfo)}</Content>
     }
 }
 
-export const componentWithContext = (props: SecondTestContentProps) => {
+export const componentWithContext = (props: MtgCardsContentProps) => {
     return <AppContext.Consumer>{context => <Component context={context} {...props}></Component>}</AppContext.Consumer>
 }
 

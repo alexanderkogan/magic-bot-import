@@ -4,10 +4,9 @@ exports[`TestPage renders shallow 1`] = `
 <div>
   <Component>
     <Component>
-      Otto Flow Test Page
+      Fetch MTG cards
     </Component>
   </Component>
-  <Connect(Component) />
   <Connect(Component) />
 </div>
 `;

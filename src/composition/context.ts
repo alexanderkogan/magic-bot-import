@@ -1,13 +1,13 @@
 import * as React from 'react'
-import { BookApi, BookApiImpl } from '../test-page/api/fetch-book-info'
+import { MtgCardsApi, MtgCardsApiImpl } from '../test-page/api/fetch-mtg-cards'
 
 export interface AppContext {
-    books: BookApi
+    mtgCards: MtgCardsApi
 }
 export interface AppContextProps {
     context: AppContext
 }
 export const productionContext: AppContext = {
-    books: new BookApiImpl(),
+    mtgCards: new MtgCardsApiImpl(),
 }
 export const AppContext: React.Context<AppContext> = React.createContext(productionContext)
