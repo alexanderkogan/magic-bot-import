@@ -8,7 +8,7 @@ import { empty, loaded } from '../../src/composition/model/fetchable'
 
 import * as MtgCardsActions from '../../src/test-page/actions/mtg-cards-actions'
 
-describe('SecondTestContent', () => {
+describe('MtgCardsContent', () => {
     let context: AppContext
     beforeEach(() => {
         context = mockedContext()

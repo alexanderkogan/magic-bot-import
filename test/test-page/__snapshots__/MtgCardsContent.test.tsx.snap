@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SecondTestContent component renders 1`] = `
+exports[`MtgCardsContent component renders 1`] = `
 <Component
   cardsInfo={
     Object {
