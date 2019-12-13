@@ -7,6 +7,7 @@ exports[`TestPage renders shallow 1`] = `
       Fetch MTG cards
     </Component>
   </Component>
+  <Component />
   <Connect(Component) />
 </div>
 `;

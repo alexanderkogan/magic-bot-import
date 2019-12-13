@@ -1,4 +1,4 @@
-import { TestPageState, initialState } from '../state'
+import { TestPageState, initialState } from './index'
 import { TestPageAction } from '../actions/actions'
 import produce, { Draft } from 'immer'
 import { loading, loaded, failed } from '../../composition/model/fetchable'
